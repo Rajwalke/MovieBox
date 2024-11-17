@@ -1,15 +1,22 @@
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Body from "./components/Body";
+import Browser from "./components/Browser";
 import './App.css';
-
 const App=()=> {
+  const appRouter=createBrowserRouter([
+      {
+        path:"/",
+        element:<Body/>
+
+      },
+      {
+        path:"/browser",
+        element:<Browser/>
+      }
+  ])
   return (
-    <div className="App">
-      <header className="App-header">
-      
-        <p className='text-2xl text-red-400'>
-         Hello Lets build moviebox
-        </p>
-      </header>
+    <div className="">
+      <RouterProvider router={appRouter}/>
     </div>
   );
 }
